@@ -1,0 +1,12 @@
+Title=1984
+Author=George Orwell
+Year=1949
+---
+Title=The Hobbit
+Author=J.R.R. Tolkien
+Year=1937
+---
+Title=Dune
+Author=Frank Herbert
+Year=1965
+---
