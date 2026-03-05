@@ -11,7 +11,7 @@ let book1 = new Book("1984", "George Orwell", 1949, 15);
 let book2 = new Book("The Hobbit", "J.R.R. Tolkien", 1937, 20);
 let book3 = new Book("The Alchemist", "Paulo Coelho", 1988, 12);
 
-const List_Book = [];
+let List_Book = [];
 
 function addBook(book) {
   if (book instanceof Book) {
@@ -28,21 +28,12 @@ console.log(List_Book);
 // ------------------------ 2
 console.log("------------- 2");
 function removeBook(title) {
-  let length1 = List_Book.length;
-  let i = 0;
-  for (const book of List_Book) {
-    if (List_Book[i].title == title) {
-      List_Book.splice(i, 1);
-      i++;
-    } else {
-      i++;
-    }
-  }
-  let length2 = List_Book.length;
-  if (length1 == length2) {
-    console.log("There is no book with that title");
+  let oldLength = List_Book.length
+  List_Book = List_Book.filter(book => book.title !== title)
+  if (oldLength === List_Book.length) {
+    console.log("There is no book with that title")
   } else {
-    console.log("A book with that name has been deleted");
+    console.log("A book with that name has been deleted")
   }
 }
 removeBook("194");
@@ -76,3 +67,4 @@ function searchByAuthor(author) {
 console.log("------------- 4");
 addBook(book4);
 searchByAuthor("Paulo Coelho");
+
